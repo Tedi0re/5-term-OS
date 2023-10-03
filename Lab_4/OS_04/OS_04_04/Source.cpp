@@ -2,7 +2,7 @@
 #include <windows.h>
 #include <thread>
 
-void OS_04_02_T1()
+void OS_04_04_T1()
 {
     for (int i = 0; i < 50; ++i)
     {
@@ -20,7 +20,7 @@ void OS_04_02_T1()
     }
 }
 
-void OS_04_02_T2()
+void OS_04_04_T2()
 {
     for (int i = 0; i < 125; ++i)
     {
@@ -40,8 +40,8 @@ void OS_04_02_T2()
 
 int main()
 {
-    std::thread thread1(OS_04_02_T1);
-    std::thread thread2(OS_04_02_T2);
+    std::thread thread1(OS_04_04_T1);
+    std::thread thread2(OS_04_04_T2);
     for (int i = 0; i < 100; i++)
     {
         DWORD processId = GetCurrentProcessId();
@@ -52,4 +52,4 @@ int main()
     thread2.join();
     return 0;
 }
-//Get-Process OS_04_02 | Select-Object -ExpandProperty Threads
+//Get-Process OS_04_04 | Select-Object -ExpandProperty Threads
